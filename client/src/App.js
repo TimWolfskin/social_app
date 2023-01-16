@@ -14,7 +14,7 @@ import {
 } from "react-router-dom";
 
 function App() {
-  const currentUser = false;
+  const currentUser = true;
 
   const Layout = () => {
     return (
