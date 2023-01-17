@@ -8,8 +8,11 @@ import { Link } from "react-router-dom";
 import GridViewOutlined from "@mui/icons-material/GridViewOutlined";
 import MailOutlined from "@mui/icons-material/MailOutlined";
 import NotificationsOutlined from "@mui/icons-material/NotificationsOutlined";
+import { useContext } from "react";
+import { DarkModeContext } from "../../context/darkModeContext";
 
 const Navbar = () => {
+  const { toggle, darkMode } = useContext(DarkModeContext);
   return (
     <div className="navbar">
       <div className="left">
@@ -17,7 +20,11 @@ const Navbar = () => {
           <span>Timsocial</span>
         </Link>
         <Home />
-        <ModeNightOutlinedIcon />
+        {darkMode ? (
+          <WbSunnyOutlinedIcon onClick={toggle} />
+        ) : (
+          <ModeNightOutlinedIcon onClick={toggle} />
+        )}
         <GridViewOutlined />
         <div className="search">
           <SearchOutlinedIcon />
@@ -29,7 +36,10 @@ const Navbar = () => {
         <MailOutlined />
         <NotificationsOutlined />
         <div className="user">
-          <img src="https://media.wnyc.org/i/raw/photologue/photos/rango_cu.jpg" alt="" />
+          <img
+            src="https://media.wnyc.org/i/raw/photologue/photos/rango_cu.jpg"
+            alt=""
+          />
           <span>John Doe</span>
         </div>
       </div>

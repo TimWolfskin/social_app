@@ -1,4 +1,7 @@
+@import "../../style.scss";
+
 .rightBar {
+  @include themify($themes) {
 
     flex: 3;
     position: sticky;
@@ -90,3 +93,4 @@
       }
     }
   }
+}
